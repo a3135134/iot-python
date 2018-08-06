@@ -127,7 +127,7 @@ class AbstractClient(object):
             self.tlsVersion = None
 
         # Configure authentication
-        if self.username is not None:
+        if self.username is not None and self.port == 8883:
             # In environments where either ssl is not available, or TLSv1.2 is not available we will fallback to MQTT over TCP
             if self.tlsVersion is not None:
                 # Path to certificate
